@@ -1,5 +1,5 @@
 {
   "name"    : "PhoneGap Desktop",
   "version" : "0.1.7",
-  "main"    : "js/index.js"
+  "main"    : "index.html"
 }
