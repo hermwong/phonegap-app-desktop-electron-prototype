@@ -1,5 +1,10 @@
 {
   "name"    : "PhoneGap",
   "version" : "0.1.7",
-  "main"    : "index.js"
+  "main"    : "index.js",
+  "dependencies" : {
+      "underscore" : "1.8.3",
+      "browserify" : "10.2.1",
+      "ampersand-model" : "5.0.3"
+  }
 }
