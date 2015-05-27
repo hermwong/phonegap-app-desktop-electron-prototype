@@ -1,1 +1,12 @@
-# phonegap-app-desktop-electron-prototype
+## phonegap-desktop-electron-prototype
+
+#### Installation
+```
+npm install
+```
+
+#### Build
+
+```
+grunt
+```
