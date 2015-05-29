@@ -1,3 +1,5 @@
+'use strict';
+
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
 
@@ -24,7 +26,7 @@ app.on('ready', function() {
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
   // Open the devtools.
-  // mainWindow.openDevTools();
+  mainWindow.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
