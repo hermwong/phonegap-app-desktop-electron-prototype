@@ -1,6 +1,8 @@
-var AmpersandModel = require('ampersand-model');
+'use strict';
 
-module.exports = AmpersandModel.extend({
+var State = require('ampersand-state');
+
+module.exports = State.extend({
     props: {
         name: 'string',
         description: 'string'

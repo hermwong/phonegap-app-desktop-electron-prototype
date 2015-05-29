@@ -5,6 +5,8 @@
   "dependencies" : {
       "underscore" : "1.8.3",
       "browserify" : "10.2.1",
-      "ampersand-model" : "5.0.3"
+      "ampersand-model" : "5.0.3",
+      "ampersand-state" : "4.5.6",
+      "ampersand-view" : "7.4.1"
   }
 }
