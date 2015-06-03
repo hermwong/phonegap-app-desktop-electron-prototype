@@ -3,6 +3,11 @@
   "version" : "0.1.7",
   "main"    : "index.js",
   "dependencies" : {
-      "browserify" : "10.2.3"
+      "ampersand-model" : "5.0.3",
+      "ampersand-state" : "4.5.6",
+      "ampersand-view" : "7.4.2",
+      "browserify" : "10.2.3",
+      "domready": "1.0.5",
+      "underscore" : "1.8.3"
   }
 }
