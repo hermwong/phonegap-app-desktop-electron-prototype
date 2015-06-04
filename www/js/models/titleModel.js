@@ -1,9 +1,7 @@
-var AmpersandState = require('ampersand-state');
+var Title = require('ampersand-state');
 
-var TitleModel = AmpersandState.extend({
+module.exports = Title.extend({
     props: {
         name: 'string'
     }
 });
-
-module.exports = TitleModel;

@@ -3,6 +3,7 @@
   "version" : "0.1.7",
   "main"    : "index.js",
   "dependencies" : {
+      "ampersand-collection" : "1.4.5",
       "ampersand-model" : "5.0.3",
       "ampersand-state" : "4.5.6",
       "ampersand-view" : "7.4.2",
