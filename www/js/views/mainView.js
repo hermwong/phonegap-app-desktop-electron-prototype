@@ -2,18 +2,21 @@ var View = require('ampersand-view');
 var Title = require('js/models/titleModel');
 
 module.exports = View.extend({
-    template: "<div><h1>PhoneGap Desktop!</h1><span data-hook='name'></span></div>",
     initialize: function() {
 
         this.initData();
-
-        console.log(this.el);
-        console.log(JSON.stringify(this.model.titleCollection.at(0)));
-
         this.render();
     },
     render: function() {
-        this.renderWithTemplate();
+        this.el.innerHTML += "<h1>PhoneGap Desktop!</h1>";
+
+        var content = "";
+        for(var i=0;i<this.model.titleCollection.length;i++) {
+            content += "<span>" + this.model.titleCollection.at(i).name + "</span><br/>";
+        }
+
+        this.el.innerHTML += content;
+
     },
     initData: function() {
         var temp = new Title();
