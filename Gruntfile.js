@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         },
         'browserify': {
             dist: {
-                src: ['./www/App.jsx'],
+                src: ['./www/App.jsx', './www/js/components/Locations.jsx'],
                 dest: './www/js/build/app.js'
             },
             options: {

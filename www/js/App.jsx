@@ -1,5 +1,5 @@
 var React = require('react');
-var Locations = require('js/components/Locations.js');
+var Locations = require('js/components/Locations.jsx');
 
 React.render(
     <h1>test</h1>,
