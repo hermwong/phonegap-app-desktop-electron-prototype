@@ -3,6 +3,8 @@
   "version" : "0.1.7",
   "main"    : "index.js",
   "dependencies" : {
-
+      "alt" : "0.16.10",
+      "react" : "0.13.3",
+      "react-tools" : "0.13.3"
   }
 }

@@ -7,10 +7,22 @@ module.exports = function(grunt) {
                 app_dir: './www',
                 build_dir: './build'
             }
+        },
+        'browserify': {
+            dist: {
+                src: ['./www/App.jsx'],
+                dest: './www/js/compiled/app.js'
+            },
+            options: {
+                transform: [
+                    ['reactify', {'es6': true}]
+                ]
+            }
         }
     });
 
     // Load the grunt plugins.
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -56,6 +68,6 @@ module.exports = function(grunt) {
             opener((os.platform() === 'darwin') ? macPath : winPath);
     });
 
-    grunt.registerTask('default', ['install-dependencies', 'clean-build-dir', 'build-electron-app', 'rename-app', 'open']);
+    grunt.registerTask('default', ['install-dependencies', 'clean-build-dir', 'browserify', 'build-electron-app', 'rename-app', 'open']);
 
 };
