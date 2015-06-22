@@ -5,17 +5,17 @@ var FavoritesStore = require('../stores/FavoritesStore');
 var LocationActions = require('../actions/LocationActions');
 
 var Favorites = React.createClass({
-  render() {
-    return (
-      <ul>
-        {this.props.locations.map((location, i) => {
-          return (
-            <li key={i}>{location.name}</li>
-          );
-        })}
-      </ul>
-    );
-  }
+    render() {
+        return (
+            <ul>
+                {this.props.locations.map((location, i) => {
+                    return (
+                        <li key={i}>{location.name}</li>
+                    );
+                })}
+            </ul>
+        );
+    }
 });
 
 var AllLocations = React.createClass({

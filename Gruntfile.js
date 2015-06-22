@@ -10,12 +10,12 @@ module.exports = function(grunt) {
         },
         'browserify': {
             dist: {
-                src: ['./www/App.jsx', './www/js/components/Locations.jsx'],
+                src: ['./www/App.jsx', './www/js/components/*.jsx'],
                 dest: './www/js/build/app.js'
             },
             options: {
                 transform: [
-                    ['reactify']
+                    ['reactify', {'es6': true}]
                 ]
             }
         }
