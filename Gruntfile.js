@@ -6,6 +6,7 @@ var ELECTRONVERSION = '1.4.13';
 var isRelease = (process.argv[2] === 'release');
 
 module.exports = function(grunt) {
+
     var osxArchive = './installers/osx64/PhoneGap-Desktop-Beta-' + APPVERSION + '-mac.zip';
     var winArchive = './installers/win32/PhoneGap-Desktop-Beta-' + APPVERSION + '-win.zip';
 
@@ -36,6 +37,9 @@ module.exports = function(grunt) {
                     asar: { unpackDir:'{bin,node_modules/adm-zip,node_modules/adm-zip/**}' }
                 }
             }
+        },
+        webpack: {
+            dist: require('./webpack.config.js')
         }
     });
 
@@ -45,6 +49,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-electron');
+    grunt.loadNpmTasks('grunt-webpack');
 
     // Register the task to install dependencies.
     grunt.task.registerTask('install-dependencies', function() {
@@ -69,6 +74,7 @@ module.exports = function(grunt) {
     grunt.task.registerTask('clean-old-files', function() {
         // clean build directories
         shell.rm('-rf', './build');
+        shell.rm('./www/bundle.js');
 
         // if we are using debugMac/debugWin commands, don't remove files
         if (process.argv[2] && process.argv[2].includes('debug'))
@@ -141,6 +147,7 @@ module.exports = function(grunt) {
             //'copy-package-json',
             'install-dependencies',
             //'copy-eula',
+            'webpack',
             'electron:' + (process.platform === 'darwin' ? 'osxBuild' : 'winBuild'),
             'open'//,
             //'start-localhost'

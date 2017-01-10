@@ -5,6 +5,9 @@
 node_modules/
 npm-debug.log
 
+# webpack artifact
+www/bundle.js
+
 # Project
 build/
 www/node_modules/
