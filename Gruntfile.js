@@ -39,7 +39,7 @@ module.exports = function(grunt) {
             }
         },
         webpack: {
-            dist: require('./webpack.config.js')
+            dist: require('./webpack.config.babel.js')
         }
     });
 
