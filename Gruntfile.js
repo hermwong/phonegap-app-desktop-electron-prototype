@@ -37,9 +37,6 @@ module.exports = function(grunt) {
                     asar: { unpackDir:'{bin,node_modules/adm-zip,node_modules/adm-zip/**}' }
                 }
             }
-        },
-        webpack: {
-            dist: require('./webpack.config.babel.js')
         }
     });
 
@@ -49,7 +46,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-electron');
-    grunt.loadNpmTasks('grunt-webpack');
 
     // Register the task to install dependencies.
     grunt.task.registerTask('install-dependencies', function() {
@@ -147,7 +143,6 @@ module.exports = function(grunt) {
             //'copy-package-json',
             'install-dependencies',
             //'copy-eula',
-            'webpack',
             'electron:' + (process.platform === 'darwin' ? 'osxBuild' : 'winBuild'),
             'open'//,
             //'start-localhost'

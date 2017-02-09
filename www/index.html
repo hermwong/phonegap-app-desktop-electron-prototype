@@ -4,6 +4,23 @@
     </head>
     <body>
         <h1>PhoneGap Desktop in Electron</h1>
-        <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+        <script src="js/vue.js"></script>
+
+        <div id="root">
+
+            <input type="text" id="input" v-model="message">
+
+            <p>The value of the input is: {{message}}.</p>
+
+            <script>
+                new Vue({
+                    el: '#root',
+                    data: {
+                        message: 'hello world'
+                    }
+                })
+            </script>
+
+        </div>
     </body>
 </html>
